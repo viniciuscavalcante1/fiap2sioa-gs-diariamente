@@ -8,7 +8,6 @@ body {
 .container {
   width: 300px;
   margin: 0 auto;
-  display: block;
   align-items: center;
   align-content: center;
   text-align: center;
@@ -37,7 +36,9 @@ label {
 
 form {
   margin-top: 20px;
-  display: block;
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 
 input {
@@ -66,6 +67,9 @@ button {
   letter-spacing: 1px;
   font-weight: 700;
   font-family: 'Figtree', sans-serif;
+  align-items: center;
+  align-content: center;
+  text-align: center;
 }
 
 button:focus {
