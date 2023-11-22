@@ -2,9 +2,11 @@ from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPExcep
 from starlette.templating import Jinja2Templates
 from models.Usuario import Usuario
 import hashlib
+from utils.ArvoreAVL import ArvoreAVL
 
 router = APIRouter()
 templates = Jinja2Templates(directory='templates')
+arvore_usuarios = ArvoreAVL()
 
 @router.get("/")
 def index(request: Request):
@@ -18,6 +20,6 @@ def cadastro(request: Request,
              senha: str = Form(...)):
     senha_hash = hashlib.md5(senha.encode()).hexdigest()
     usuario = Usuario(nome, email, senha_hash)
-    print(usuario)
-    print(f"Nome: {nome}\t E-mail: {email}\t Senha: {senha_hash}")
+    arvore_usuarios.inserir_dados(usuario)
+    arvore_usuarios.imprimir_arvore()
     return usuario

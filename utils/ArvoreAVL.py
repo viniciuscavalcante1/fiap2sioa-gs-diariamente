@@ -1,4 +1,5 @@
-from NoAVL import NoAVL
+from utils.NoAVL import NoAVL
+
 class ArvoreAVL:
     def __init__(self):
         self.raiz = None
@@ -86,3 +87,20 @@ class ArvoreAVL:
             return self.buscar(no.esquerda, dados, comparacoes + 1)
         else:
             return self.buscar(no.direita, dados, comparacoes + 1)
+
+    def imprimir_em_ordem(self, no):
+        print("entrei na func")
+        if no:
+            print("entrei no primeiro if")
+            # Percorre a subárvore esquerda
+            self.imprimir_em_ordem(no.esquerda)
+            # Imprime o dado do nó atual
+            print(no.dados, end=' ')
+            # Percorre a subárvore direita
+            self.imprimir_em_ordem(no.direita)
+
+    def imprimir_arvore(self):
+        print("entrei na segunda func")
+        print("Árvore AVL:")
+        self.imprimir_em_ordem(self.raiz)
+        print()
