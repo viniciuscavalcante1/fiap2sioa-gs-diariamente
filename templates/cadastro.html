@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="../static/css/login.css?v=3">
 </head>
 <body>
-$END$
+  <div class="container">
+    <img src="../static/img/logo.png" alt="Logo">
+    <h1>cadastro</h1>
+    <form action="/cadastro" method="post">
+      <label for="nome">nome</label>
+      <input type="text" name="nome" id="nome">
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+      <label for="senha">senha</label>
+      <input type="password" name="senha" id="senha">
+        <input type="checkbox" name="psicologo" id="psicologo">
+        <label for="psicologo">asdas</label>
+      <button type="submit">cadastrar</button>
+    </form>
+    <p>já possui uma conta? <a href="/login">faça o login aqui :)</a></p>
+  </div>
 </body>
 </html>

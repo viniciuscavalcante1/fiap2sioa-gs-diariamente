@@ -7,4 +7,4 @@ templates = Jinja2Templates(directory='templates')
 @router.get("/")
 def index(request: Request):
     context = {'request': request}
-    return templates.TemplateResponse('login.html', context)
+    return templates.TemplateResponse('cadastro.html', context)

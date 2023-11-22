@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from server.routes.diario import router as diario_router
 from server.routes.login import router as login_router
+from server.routes.cadastro import router as cadastro_router
 from pathlib import Path
 from fastapi.exceptions import RequestValidationError
 from fastapi import Request, status
@@ -12,6 +13,7 @@ templates = Jinja2Templates(directory='templates')
 app = FastAPI()
 
 app.include_router(login_router, tags=["login"], prefix="/login")
+app.include_router(cadastro_router, tags=["cadastro"], prefix="/cadastro")
 
 app.mount(
     "/static",
