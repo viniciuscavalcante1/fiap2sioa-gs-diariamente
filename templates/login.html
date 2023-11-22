@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+<body>
+  <div class="container">
+    <img src="../static/img/logo.png" alt="Logo">
+    <h1>login</h1>
+    <form action="/login" method="post">
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+      <label for="senha">senha</label>
+      <input type="password" name="senha" id="senha">
+      <button type="submit">entrar</button>
+    </form>
+    <p>não tem uma conta? <a href="/cadastro">cadastre-se aqui :)</a></p>
+  </div>
+</body>
+</html>
