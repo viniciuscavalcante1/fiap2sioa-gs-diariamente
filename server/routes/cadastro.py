@@ -17,5 +17,4 @@ def cadastro(request: Request,
              senha: str = Form(...)):
     senha_hash = hashlib.md5(senha.encode()).hexdigest()
     print(f"Nome: {nome}\t E-mail: {email}\t Senha: {senha_hash}")
-    print(hash(senha) == hash(senha))
     return request.json
