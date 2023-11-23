@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException
 from starlette.templating import Jinja2Templates
 
-from server.routes.login import usuario_autenticado
-
 router = APIRouter()
 templates = Jinja2Templates(directory='templates')
 
+
 @router.get("/")
 def index(request: Request):
+    from server.routes.login import usuario_autenticado
     if usuario_autenticado:
         context = {'request': request}
         return templates.TemplateResponse('diario.html', context)
