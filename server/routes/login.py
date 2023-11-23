@@ -1,8 +1,7 @@
 import hashlib
-
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException, Header
+from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
-
 from server.routes.cadastro import arvore_usuarios
 
 router = APIRouter()
@@ -37,7 +36,10 @@ def login(request: Request,
     global dados_usuario
     usuario_autenticado, dados_usuario = autenticar_usuario(email, senha)
     if usuario_autenticado:
-        return {"mensagem": "Usuário autenticado", "usuario_autenticado": dados_usuario}
+        response = RedirectResponse(
+            url=f"/diario?email={email}",
+            status_code=status.HTTP_302_FOUND)
+        return response
     else:
         raise HTTPException(
             status_code=401,

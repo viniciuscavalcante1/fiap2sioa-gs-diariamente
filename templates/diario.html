@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Diário</title>
+  <link rel="stylesheet" href="../static/css/diario.css?v=1">
+</head>
+<body>
+  <div class="container">
+    <img src="../static/img/logo.png" alt="Logo">
+    <h1>Diário</h1>
+    <form action="/adicionar_entrada" method="post">
+      <label for="titulo">Título</label>
+      <input type="text" name="titulo" id="titulo">
+      <label for="conteudo">Conteúdo</label>
+      <textarea name="conteudo" id="conteudo"></textarea>
+      <button type="submit">Adicionar Entrada</button>
+    </form>
+    <p>Voltar para <a href="/">página inicial</a></p>
+  </div>
+</body>
+</html>

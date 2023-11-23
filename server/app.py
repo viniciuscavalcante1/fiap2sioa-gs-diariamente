@@ -14,6 +14,8 @@ app = FastAPI()
 
 app.include_router(login_router, tags=["login"], prefix="/login")
 app.include_router(cadastro_router, tags=["cadastro"], prefix="/cadastro")
+app.include_router(diario_router, tags=["diario"], prefix="/diario")
+
 
 app.mount(
     "/static",
