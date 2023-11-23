@@ -6,6 +6,7 @@ templates = Jinja2Templates(directory='templates')
 
 
 @router.get("/")
+# TODO: adicionar entradas em json
 def index(request: Request):
     from server.routes.login import usuario_autenticado
     if usuario_autenticado:

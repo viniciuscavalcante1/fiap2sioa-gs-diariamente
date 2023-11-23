@@ -8,15 +8,21 @@
 <body>
   <div class="container">
     <img src="../static/img/logo.png" alt="Logo">
-    <h1>Diário</h1>
+    <h1>como está se sentindo hoje?</h1>
     <form action="/adicionar_entrada" method="post">
-      <label for="titulo">Título</label>
+      <label for="titulo">título</label>
       <input type="text" name="titulo" id="titulo">
-      <label for="conteudo">Conteúdo</label>
+      <label for="conteudo">respire, e sinta-se livre para escrever o que quiser :)</label>
       <textarea name="conteudo" id="conteudo"></textarea>
-      <button type="submit">Adicionar Entrada</button>
+
+      <label for="humor">selecione um humor de 1 a 10:</label>
+      <input type="range" id="humor" name="humor" min="1" max="10" step="1">
+
+      <label for="momento_feliz">o que te fez feliz hoje?</label>
+      <input type="text" name="momento_feliz" id="momento_feliz">
+
+      <button type="submit">adicionar entrada</button>
     </form>
-    <p>Voltar para <a href="/">página inicial</a></p>
   </div>
 </body>
 </html>
