@@ -100,3 +100,17 @@ class ArvoreAVL:
     def imprimir_arvore(self):
         self.imprimir_em_ordem(self.raiz)
         print()
+
+    def buscar_por_email(self, email):
+        return self.buscar_por_email_recursivo(self.raiz, email)
+
+    def buscar_por_email_recursivo(self, no, email):
+        if not no:
+            return None
+
+        if email == no.dados.email:
+            return no.dados
+        elif email < no.dados.email:
+            return self.buscar_por_email_recursivo(no.esquerda, email)
+        else:
+            return self.buscar_por_email_recursivo(no.direita, email)
