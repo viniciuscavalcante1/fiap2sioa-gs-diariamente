@@ -7,7 +7,7 @@ from server.routes.cadastro import arvore_usuarios
 router = APIRouter()
 templates = Jinja2Templates(directory='templates')
 usuario_autenticado = False
-dados_usuario = None
+email_usuario = None
 
 
 def autenticar_usuario(email, senha):
@@ -15,7 +15,7 @@ def autenticar_usuario(email, senha):
     if usuario_encontrado is not None:
         senha_hash = hashlib.md5(senha.encode()).hexdigest()
         if senha_hash == usuario_encontrado.senha:
-            return True, {"email": email}
+            return True, email
         else:
             return False, "SENHA INCORRETA"
     else:
@@ -33,8 +33,8 @@ def login(request: Request,
           email: str = Form(...),
           senha: str = Form(...)):
     global usuario_autenticado
-    global dados_usuario
-    usuario_autenticado, dados_usuario = autenticar_usuario(email, senha)
+    global email_usuario
+    usuario_autenticado, email_usuario = autenticar_usuario(email, senha)
     if usuario_autenticado:
         response = RedirectResponse(
             url=f"/diario?email={email}",
