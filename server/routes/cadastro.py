@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException
+from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
 from models.Usuario import Usuario
 import hashlib
@@ -22,4 +23,7 @@ def cadastro(request: Request,
     usuario = Usuario(nome, email, senha_hash)
     arvore_usuarios.inserir_dados(usuario)
     arvore_usuarios.imprimir_arvore()
-    return usuario
+    response = RedirectResponse(
+        url=f"/login",
+        status_code=status.HTTP_302_FOUND)
+    return response
