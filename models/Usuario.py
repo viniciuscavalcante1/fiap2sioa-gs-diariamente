@@ -24,3 +24,6 @@ class Usuario:
 
     def __ge__(self, other):
         return self.email >= other.email
+
+    def dict(self):
+        return {"email": self.email, "nome": self.nome, "senha": self.senha}

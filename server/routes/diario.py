@@ -1,4 +1,5 @@
 import json
+import os.path
 from datetime import datetime
 
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException
@@ -48,8 +49,7 @@ def diario_post(request: Request,
         "momento_feliz": momento_feliz,
         "timestamp": datetime.now().isoformat()
     }
-    with open("C:\\Users\\vinicius.cavalcante\\Documents\\GitHub\\fiap\\fiap2sioa-gs-diariamente\\data"
-              "\\entradas_diario.json", "r") as arquivo:
+    with open("data/entradas_diario.json", "r") as arquivo:
         dados = json.load(arquivo)
         if email in dados:
             dados[email].append(entrada_diario)
