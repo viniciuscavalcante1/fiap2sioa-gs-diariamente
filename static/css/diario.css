@@ -118,6 +118,11 @@ a:focus {
   display: flex;
 }
 
+.botao-entradas-anteriores{
+  background-color: #c3e6d9 !important;
+  margin-top: 10px;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

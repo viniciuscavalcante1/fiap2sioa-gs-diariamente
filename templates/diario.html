@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Diário</title>
-  <link rel="stylesheet" href="../static/css/diario.css?v=11">
+  <link rel="stylesheet" href="../static/css/diario.css?v=12">
+  <script src="../static/js/diario.js?v=1"></script>
 </head>
 <body>
   <div class="container">
@@ -32,16 +33,8 @@
 
       <button type="submit">adicionar entrada</button>
     </form>
-  </div>
+        <button onclick="redirecionarParaEntradasAnteriores('{{ email }}')" class="botao-entradas-anteriores">ver outras entradas</button>
 
-  <script>
-    function selecionarHumor(valor) {
-      document.getElementById("humor").value = valor;
-      document.querySelectorAll('.humor-buttons button').forEach(btn => {
-        btn.style.backgroundColor = btn.innerText.includes(valor) ? '#3fbc9b' : '#c3e6d9'; // Muda a cor para verde se o botão corresponder ao valor selecionado
-        btn.style.color = btn.innerText.includes(valor) ? '#fff' : '#40be9c'; // Muda a cor do texto para branco se o botão estiver selecionado
-      });
-    }
-  </script>
+  </div>
 </body>
 </html>

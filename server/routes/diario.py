@@ -17,7 +17,7 @@ def index(request: Request,
     from server.routes.login import email_usuario
     if usuario_autenticado:
         if email_usuario == email:
-            context = {'request': request}
+            context = {'request': request, 'email': email}
             return templates.TemplateResponse('diario.html', context, status_code=200)
         else:
             # TODO: trocar esse HTTPException por uma página bonitinha de erro
