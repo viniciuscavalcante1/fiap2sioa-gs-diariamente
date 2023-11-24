@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Diário</title>
-  <link rel="stylesheet" href="../static/css/diario.css?v=15">
+  <link rel="stylesheet" href="../static/css/diario.css?v=19">
   <script src="../static/js/diario.js?v=1"></script>
 </head>
 <body>
@@ -23,11 +23,11 @@
 
       <label for="humor">selecione um humor de 1 a 5:</label>
       <div class="humor-buttons">
-        <button type="button" onclick="selecionarHumor(1)" style="background-color: #c3e6d9; color: #40be9c;">1 😢</button>
-        <button type="button" onclick="selecionarHumor(2)" style="background-color: #c3e6d9; color: #40be9c;">2 😕</button>
-        <button type="button" onclick="selecionarHumor(3)" style="background-color: #c3e6d9; color: #40be9c;">3 😐</button>
-        <button type="button" onclick="selecionarHumor(4)" style="background-color: #c3e6d9; color: #40be9c;">4 🙂</button>
-        <button type="button" onclick="selecionarHumor(5)" style="background-color: #c3e6d9; color: #40be9c;">5 😄</button>
+        <button class="to_scale" type="button" onclick="selecionarHumor(1)" style="background-color: #c3e6d9; color: #40be9c;">1 😢</button>
+        <button class="to_scale" type="button" onclick="selecionarHumor(2)" style="background-color: #c3e6d9; color: #40be9c;">2 😕</button>
+        <button class="to_scale" type="button" onclick="selecionarHumor(3)" style="background-color: #c3e6d9; color: #40be9c;">3 😐</button>
+        <button class="to_scale" type="button" onclick="selecionarHumor(4)" style="background-color: #c3e6d9; color: #40be9c;">4 🙂</button>
+        <button class="to_scale" type="button" onclick="selecionarHumor(5)" style="background-color: #c3e6d9; color: #40be9c;">5 😄</button>
       </div>
 
       <label for="conteudo">respire, e sinta-se livre para escrever o que quiser :)</label>
@@ -38,9 +38,9 @@
 
       <input type="hidden" name="humor" id="humor">
 
-      <button type="submit">adicionar entrada</button>
+      <button class="to_scale" type="submit">adicionar entrada</button>
     </form>
-        <button onclick="redirecionarParaEntradasAnteriores('{{ email }}')" class="botao-entradas-anteriores">ver outras entradas</button>
+        <button onclick="redirecionarParaEntradasAnteriores('{{ email }}')" class="botao-entradas-anteriores to_scale">ver outras entradas</button>
 
   </div>
 </body>
