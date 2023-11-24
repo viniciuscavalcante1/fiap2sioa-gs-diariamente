@@ -5,6 +5,7 @@ from server.routes.login import router as login_router
 from server.routes.cadastro import router as cadastro_router
 from server.routes.meditacao import router as meditacao_router
 from server.routes.videos_relaxantes import router as videos_router
+from server.routes.ajuda_profissional import router as ajuda_profissional_router
 from pathlib import Path
 from fastapi.exceptions import RequestValidationError
 from fastapi import Request, status
@@ -19,6 +20,7 @@ app.include_router(cadastro_router, tags=["cadastro"], prefix="/cadastro")
 app.include_router(diario_router, tags=["diario"], prefix="/diario")
 app.include_router(meditacao_router, tags=["meditacao"], prefix="/meditacao")
 app.include_router(videos_router, tags=["videos_relaxantes"], prefix="/videos-relaxantes")
+app.include_router(ajuda_profissional_router, tags=["ajuda_profissional"], prefix="/ajuda-profissional")
 app.mount(
     "/static",
     StaticFiles(directory=Path(__file__).parent.parent.absolute() / "static"),
