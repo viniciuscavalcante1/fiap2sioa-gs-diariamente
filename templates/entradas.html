@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <title>entradas</title>
   <link rel="stylesheet" href="../static/css/entradas.css?v=4">
-  <script src="../static/js/entradas.js"></script>
+  <script src="../static/js/entradas.js?v=2"></script>
 </head>
 <body>
   <div class="container">
     <img src="../static/img/logo.png?v=1" alt="Logo">
     <h1>seu diário ({{email}})</h1>
+    <button onclick="redirecionarParaDiario('{{ email }}')">adicionar nova entrada</button>
 
     <div class="cards-container">
       {% for entrada in entradas_usuario %}
