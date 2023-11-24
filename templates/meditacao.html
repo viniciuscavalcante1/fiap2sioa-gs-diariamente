@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>respirar</title>
-    <link rel="stylesheet" href="../static/css/meditacao.css?v=1">
+    <link rel="stylesheet" href="../static/css/meditacao.css?v=3">
     <script src="../static/js/meditacao.js?v=1"></script>
 
 </head>
 <body>
 <div class="container">
     <img src="../static/img/logo.png?v=1" alt="Logo">
+    <div class="header">
+      <a class="navigation" href="/diario?email={{ email }}">diário</a>
+      <a class="navigation nav-selected" href="/meditacao?email={{ email }}">timer de meditação</a>
+      <a class="navigation"href="/videos-relaxantes?email={{ email }}">vídeos relaxantes</a>
+      <a class="navigation"href="/ajuda-profissional?email={{ email }}">ajuda profissional</a>
+      </div>
     <h1>respire fundo e conecte-se consigo mesmo</h1>
     <div class="meditacao-container">
         <label for="duracao">por quanto tempo vamos meditar?</label>

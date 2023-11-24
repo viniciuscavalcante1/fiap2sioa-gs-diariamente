@@ -124,10 +124,6 @@ button {
   text-align: center;
 }
 
-button:focus {
-  border: 1px solid #3fbc9b;
-  outline: #3fbc9b;
-}
 
 p {
   font-size: 12px;
@@ -140,10 +136,6 @@ a {
   text-decoration: none;
 }
 
-a:focus {
-  border: 1px solid #3fbc9b;
-  outline: #3fbc9b;
-}
 
 ::-webkit-scrollbar {
   width: 12px;

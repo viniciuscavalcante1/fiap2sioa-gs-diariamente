@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Diário</title>
-  <link rel="stylesheet" href="../static/css/diario.css?v=12">
+  <link rel="stylesheet" href="../static/css/diario.css?v=15">
   <script src="../static/js/diario.js?v=1"></script>
 </head>
 <body>
   <div class="container">
     <img src="../static/img/logo.png?v=1" alt="Logo">
+    <div class="header">
+      <a class="navigation nav-selected" href="/diario?email={{ email }}">diário</a>
+      <a class="navigation" href="/meditacao?email={{ email }}">timer de meditação</a>
+      <a class="navigation"href="/videos-relaxantes?email={{ email }}">vídeos relaxantes</a>
+      <a class="navigation"href="/ajuda-profissional?email={{ email }}">ajuda profissional</a>
+
+      </div>
     <h1>como você está se sentindo?</h1>
     <form method="post">
       <label for="titulo">título</label>

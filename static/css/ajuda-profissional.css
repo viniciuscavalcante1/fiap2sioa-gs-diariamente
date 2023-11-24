@@ -120,11 +120,6 @@ button {
   text-align: center;
 }
 
-button:focus {
-  border: 1px solid #3fbc9b;
-  outline: #3fbc9b;
-}
-
 p {
   font-size: 12px;
   color: #6b6b6d;
@@ -136,10 +131,6 @@ a {
   text-decoration: none;
 }
 
-a:focus {
-  border: 1px solid #3fbc9b;
-  outline: #3fbc9b;
-}
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -158,3 +149,40 @@ a:focus {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2b8960;
 }
+
+
+.navigation{
+  margin: 10px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: #c3e6d9;
+  padding: 0px 5px;
+  border-radius: 10px;
+}
+
+.nav-selected {
+  color: #3fbc9b;
+}
+
+.navigation:hover {
+  color: #3fbc9b;
+}
+
+button:hover {
+  background-color: #2b8960;
+}
+
+
+.header {
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+a {
+  color: #3fbc9b;
+  font-weight: bold;
+  text-decoration: none;
+}
+

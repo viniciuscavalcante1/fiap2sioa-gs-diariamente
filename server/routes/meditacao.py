@@ -8,5 +8,8 @@ templates = Jinja2Templates(directory='templates')
 @router.get("/")
 def index(request: Request,
           email=Query(False)):
-    context = {"request": request}
+    if email:
+        context = {"request": request, "email": email}
+    else:
+        context = {"request": request}
     return templates.TemplateResponse('meditacao.html', context, status_code=200)
