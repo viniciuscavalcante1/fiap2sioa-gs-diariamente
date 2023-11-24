@@ -1,5 +1,4 @@
 import json
-
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException
 from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
@@ -24,10 +23,16 @@ def salvar_dados_json(arquivo, dados):
         json.dump(dados, file)
 
 
+def json_usuarios_para_arvore_avl(json_usuarios, arvore_usuarios):
+    for dado_usuario in json_usuarios.values():
+        usuario = Usuario(dado_usuario["nome"], dado_usuario["email"], dado_usuario["senha"])
+        arvore_usuarios.inserir_dados(usuario)
+    return arvore_usuarios
+
 JSON_USUARIOS_PATH = "data/usuarios.json"
 arvore_usuarios = ArvoreAVL()
 json_usuarios = carregar_dados_json(JSON_USUARIOS_PATH)
-
+arvore_usuarios = json_usuarios_para_arvore_avl(json_usuarios, arvore_usuarios)
 
 @router.get("/")
 def index(request: Request):
