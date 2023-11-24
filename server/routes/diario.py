@@ -59,5 +59,4 @@ def diario_post(request: Request,
               "\\entradas_diario.json", "w") as arquivo:
         json.dump(dados, arquivo, indent=2)
 
-    print(f"titulo: {titulo}\nhumor: {humor}\nconteudo: {conteudo}\nmomento_feliz: {momento_feliz}")
     return RedirectResponse(url=f"/diario?email={email}", status_code=303)
