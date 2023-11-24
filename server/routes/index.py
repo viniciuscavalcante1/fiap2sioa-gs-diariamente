@@ -8,5 +8,15 @@ templates = Jinja2Templates(directory='templates')
 @router.get("/")
 def index_homepage(request: Request,
           email=Query(False)):
+    """
+        Rota para renderizar a página inicial.
+
+        Args:
+            request (Request): Objeto da requisição FastAPI.
+            email (str): O e-mail do usuário, se fornecido.
+
+        Returns:
+            TemplateResponse: Resposta contendo a página inicial renderizada.
+        """
     context = {"request": request}
     return templates.TemplateResponse('index.html', context, status_code=200)

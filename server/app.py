@@ -1,3 +1,17 @@
+"""
+Configuração do aplicativo FastAPI para fornecer rotas para diferentes partes da aplicação.
+
+- `/login`: Rota para autenticação de usuários.
+- `/cadastro`: Rota para cadastro de usuários.
+- `/diario`: Rota do diário.
+- `/meditacao`: Rota para a página de meditação.
+- `/videos-relaxantes`: Rota para a página de vídeos.
+- `/ajuda-profissional`: Rota para a página de ajuda profissional.
+- `/index`: Rota para a página inicial.
+
+O diretório "static" é montado para fornecer arquivos estáticos (css, imagens e áudios).
+"""
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from server.routes.diario import router as diario_router
@@ -8,8 +22,6 @@ from server.routes.videos_relaxantes import router as videos_router
 from server.routes.ajuda_profissional import router as ajuda_profissional_router
 from server.routes.index import router as index_router
 from pathlib import Path
-from fastapi.exceptions import RequestValidationError
-from fastapi import Request, status
 from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory='templates')
@@ -29,21 +41,3 @@ app.mount(
     StaticFiles(directory=Path(__file__).parent.parent.absolute() / "static"),
     name="static",
 )
-
-# @app.exception_handler(RequestValidationError)
-# async def validation_exception_handler(request: Request, exc: RequestValidationError):
-#     error_messages = []
-#     for entry in exc.errors():
-#         error_type = entry['type']
-#         error_msg = entry['msg']
-#         error_loc = entry['loc'][1]
-#
-#         formatted_message = f"""<p style="margin-left: 50px;">Missing: {error_loc} - Message: {error_msg}</p>"""
-#         error_messages.append(formatted_message)
-#     result = "".join(error_messages)
-#     context = f"""<h2>Data validation error:</h2><br>
-#                         <h3>Detail:</h3> <br>{result}<br>
-#                      Please go back to the previous page an correct the errors"""
-#
-#     return templates.TemplateResponse('index-tela-erro.html', {'request': request, 'message': context},
-#                                       status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)

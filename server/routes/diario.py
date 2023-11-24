@@ -14,6 +14,16 @@ templates = Jinja2Templates(directory='templates')
 @router.get("/")
 def index(request: Request,
           email=Query(...)):
+    """
+        Rota para renderizar a página principal do diário.
+
+        Args:
+            request (Request): Objeto da requisição FastAPI.
+            email (str): O e-mail do usuário.
+
+        Returns:
+            TemplateResponse: Resposta contendo a página renderizada do diário.
+        """
     from server.routes.login import usuario_autenticado
     from server.routes.login import email_usuario
     if usuario_autenticado:
@@ -41,6 +51,20 @@ def diario_post(request: Request,
                 conteudo: str = Form(...),
                 momento_feliz: str = Form(...),
                 email=Query(...)):
+    """
+        Rota para lidar com o envio de uma nova entrada no diário.
+
+        Args:
+            request (Request): Objeto da requisição FastAPI.
+            titulo (str): O título da entrada.
+            humor (int): O nível de humor da entrada.
+            conteudo (str): O conteúdo da entrada.
+            momento_feliz (str): Um momento feliz da entrada.
+            email (str): O e-mail do usuário.
+
+        Returns:
+            RedirectResponse: Redireciona para a página do diário após o envio da entrada.
+        """
     entrada_diario = {
         "email": email,
         "titulo": titulo,
@@ -64,6 +88,15 @@ def diario_post(request: Request,
 
 
 def quicksort_entradas(entradas_usuario):
+    """
+        Implementa o algoritmo de ordenação quicksort para ordenar entradas do diário por timestamp.
+
+        Args:
+            entradas_usuario (list): Lista de entradas do diário de um usuário.
+
+        Returns:
+            list: Lista ordenada de entradas do diário.
+        """
     if len(entradas_usuario) <= 1:
         return entradas_usuario
 
@@ -78,6 +111,16 @@ def quicksort_entradas(entradas_usuario):
 @router.get("/entradas")
 def index(request: Request,
           email=Query(...)):
+    """
+        Rota para renderizar a página de entradas do diário.
+
+        Args:
+            request (Request): Objeto da requisição FastAPI.
+            email (str): O e-mail do usuário.
+
+        Returns:
+            TemplateResponse: Resposta contendo a página renderizada de entradas do diário.
+        """
     from server.routes.login import usuario_autenticado
     from server.routes.login import email_usuario
     if usuario_autenticado:
