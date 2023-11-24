@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #3fbc9b;
+}
+
+.card-content {
+  display: none;
+}
+
+.card-content.show {
+  display: block;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #fcfdfc;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 48px;
+  padding: 10px;
+}
+
+h1 {
+  color: #3A3938;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: 'Figtree', sans-serif;
+}
+
+label {
+  color: #555557;
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+input {
+  width: 294px;
+  height: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  padding: 10px;
+}
+
+input:focus {
+  border: 1px solid #3fbc9b;
+  outline: #3fbc9b;
+}
+
+
+button {
+  background-color: #3fbc9b;
+  margin-top: 20px;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: 'Figtree', sans-serif;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+button:focus {
+  border: 1px solid #3fbc9b;
+  outline: #3fbc9b;
+}
+
+p {
+  font-size: 12px;
+  color: #6b6b6d;
+}
+
+a {
+  color: #3fbc9b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:focus {
+  border: 1px solid #3fbc9b;
+  outline: #3fbc9b;
+}

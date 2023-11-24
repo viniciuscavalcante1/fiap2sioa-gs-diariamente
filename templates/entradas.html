@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>entradas</title>
+  <link rel="stylesheet" href="../static/css/entradas.css?v=3">
+</head>
+<body>
+  <div class="container">
+    <img src="../static/img/logo.png?v=1" alt="Logo">
+    <h1>Diário do {{email}}</h1>
+
+    <div class="cards-container">
+      {% for entrada in entradas_usuario %}
+        <div class="card">
+          <h3>{{ entrada.titulo }}</h3>
+          <p>{{ entrada.timestamp }}</p>
+          <div class="card-content">
+            <p><strong>humor:</strong> {{ entrada.humor }}</p>
+            <p>{{ entrada.conteudo }}</p>
+            <p><strong>momento feliz:</strong> {{ entrada.momento_feliz }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script src="../static/js/entradas.js"></script>
+</body>
+</html>

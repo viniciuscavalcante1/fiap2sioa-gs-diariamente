@@ -77,7 +77,10 @@ def index(request: Request,
                 entradas_usuario = entradas.get(email, [])
                 if not entradas_usuario:
                     raise HTTPException(status_code=404, detail="Diário não encontrado")
-                return JSONResponse(content=jsonable_encoder(entradas_usuario))
+                return templates.TemplateResponse(
+                    "entradas.html",
+                    {"request": request, "email": email, "entradas_usuario": entradas_usuario}
+                )
         else:
             # TODO: trocar esse HTTPException por uma página bonitinha de erro
             raise HTTPException(
