@@ -3,26 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Diário</title>
-  <link rel="stylesheet" href="../static/css/diario.css?v=1">
+  <link rel="stylesheet" href="../static/css/diario.css?v=11">
 </head>
 <body>
   <div class="container">
-    <img src="../static/img/logo.png" alt="Logo">
-    <h1>como está se sentindo hoje?</h1>
+    <img src="../static/img/logo.png?v=1" alt="Logo">
+    <h1>como você está se sentindo?</h1>
     <form action="/adicionar_entrada" method="post">
       <label for="titulo">título</label>
       <input type="text" name="titulo" id="titulo">
+
+      <label for="humor">selecione um humor de 1 a 5:</label>
+      <div class="humor-buttons">
+        <button type="button" onclick="selecionarHumor(1)" style="background-color: #c3e6d9; color: #40be9c;">1 😢</button>
+        <button type="button" onclick="selecionarHumor(2)" style="background-color: #c3e6d9; color: #40be9c;">2 😕</button>
+        <button type="button" onclick="selecionarHumor(3)" style="background-color: #c3e6d9; color: #40be9c;">3 😐</button>
+        <button type="button" onclick="selecionarHumor(4)" style="background-color: #c3e6d9; color: #40be9c;">4 🙂</button>
+        <button type="button" onclick="selecionarHumor(5)" style="background-color: #c3e6d9; color: #40be9c;">5 😄</button>
+      </div>
+
       <label for="conteudo">respire, e sinta-se livre para escrever o que quiser :)</label>
       <textarea name="conteudo" id="conteudo"></textarea>
-
-      <label for="humor">selecione um humor de 1 a 10:</label>
-      <input type="range" id="humor" name="humor" min="1" max="10" step="1">
 
       <label for="momento_feliz">o que te fez feliz hoje?</label>
       <input type="text" name="momento_feliz" id="momento_feliz">
 
+      <input type="hidden" name="humor" id="humor">
+
       <button type="submit">adicionar entrada</button>
     </form>
   </div>
+
+  <script>
+    function selecionarHumor(valor) {
+      document.getElementById("humor").value = valor;
+      document.querySelectorAll('.humor-buttons button').forEach(btn => {
+        btn.style.backgroundColor = btn.innerText.includes(valor) ? '#3fbc9b' : '#c3e6d9'; // Muda a cor para verde se o botão corresponder ao valor selecionado
+        btn.style.color = btn.innerText.includes(valor) ? '#fff' : '#40be9c'; // Muda a cor do texto para branco se o botão estiver selecionado
+      });
+    }
+  </script>
 </body>
 </html>
