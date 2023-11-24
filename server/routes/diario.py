@@ -1,3 +1,6 @@
+import json
+from datetime import datetime
+
 from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPException
 from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
@@ -36,5 +39,25 @@ def diario_post(request: Request,
                 conteudo: str = Form(...),
                 momento_feliz: str = Form(...),
                 email=Query(...)):
+    entrada_diario = {
+        "email": email,
+        "titulo": titulo,
+        "humor": humor,
+        "conteudo": conteudo,
+        "momento_feliz": momento_feliz,
+        "timestamp": datetime.now().isoformat()
+    }
+    with open("C:\\Users\\vinicius.cavalcante\\Documents\\GitHub\\fiap\\fiap2sioa-gs-diariamente\\data"
+              "\\entradas_diario.json", "r") as arquivo:
+        dados = json.load(arquivo)
+        if email in dados:
+            dados[email].append(entrada_diario)
+        else:
+            dados[email] = [entrada_diario]
+
+    with open("C:\\Users\\vinicius.cavalcante\\Documents\\GitHub\\fiap\\fiap2sioa-gs-diariamente\\data"
+              "\\entradas_diario.json", "w") as arquivo:
+        json.dump(dados, arquivo, indent=2)
+
     print(f"titulo: {titulo}\nhumor: {humor}\nconteudo: {conteudo}\nmomento_feliz: {momento_feliz}")
     return RedirectResponse(url=f"/diario?email={email}", status_code=303)

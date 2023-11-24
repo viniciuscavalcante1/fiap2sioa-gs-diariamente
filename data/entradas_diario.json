@@ -1,0 +1,44 @@
+{
+  "vini@lindo.com": [
+    {
+      "email": "vini@lindo.com",
+      "titulo": "a",
+      "humor": 1,
+      "conteudo": "a",
+      "momento_feliz": "a",
+      "timestamp": "2023-11-23T22:16:36.051600"
+    },
+    {
+      "email": "vini@lindo.com",
+      "titulo": "b",
+      "humor": 2,
+      "conteudo": "b",
+      "momento_feliz": "b",
+      "timestamp": "2023-11-23T22:16:46.532433"
+    },
+    {
+      "email": "vini@lindo.com",
+      "titulo": "c",
+      "humor": 3,
+      "conteudo": "c",
+      "momento_feliz": "c",
+      "timestamp": "2023-11-23T22:16:52.069558"
+    },
+    {
+      "email": "vini@lindo.com",
+      "titulo": "d",
+      "humor": 4,
+      "conteudo": "d",
+      "momento_feliz": "d",
+      "timestamp": "2023-11-23T22:16:57.898882"
+    },
+    {
+      "email": "vini@lindo.com",
+      "titulo": "e",
+      "humor": 5,
+      "conteudo": "e",
+      "momento_feliz": "e",
+      "timestamp": "2023-11-23T22:17:02.521157"
+    }
+  ]
+}
