@@ -63,6 +63,18 @@ def diario_post(request: Request,
     return RedirectResponse(url=f"/diario?email={email}", status_code=303)
 
 
+def quicksort_entradas(entradas_usuario):
+    if len(entradas_usuario) <= 1:
+        return entradas_usuario
+
+    pivot = entradas_usuario[len(entradas_usuario) // 2]['timestamp']
+    left = [x for x in entradas_usuario if x['timestamp'] > pivot]
+    middle = [x for x in entradas_usuario if x['timestamp'] == pivot]
+    right = [x for x in entradas_usuario if x['timestamp'] < pivot]
+
+    return quicksort_entradas(left) + middle + quicksort_entradas(right)
+
+
 @router.get("/entradas")
 def index(request: Request,
           email=Query(...)):
@@ -77,6 +89,7 @@ def index(request: Request,
                 entradas_usuario = entradas.get(email, [])
                 if not entradas_usuario:
                     raise HTTPException(status_code=404, detail="Diário não encontrado")
+                entradas_usuario = quicksort_entradas(entradas_usuario)
                 return templates.TemplateResponse(
                     "entradas.html",
                     {"request": request, "email": email, "entradas_usuario": entradas_usuario}
