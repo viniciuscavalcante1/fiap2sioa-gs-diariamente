@@ -9,6 +9,12 @@
 <body>
   <div class="container">
     <img src="../static/img/logo.png?v=1" alt="Logo">
+    <div class="header">
+      <a class="navigation nav-selected" href="/diario?email={{ email }}">diário</a>
+      <a class="navigation" href="/meditacao?email={{ email }}">timer de meditação</a>
+      <a class="navigation" href="/videos-relaxantes?email={{ email }}">vídeos relaxantes</a>
+      <a class="navigation" href="/ajuda-profissional?email={{ email }}">ajuda profissional</a>
+      </div>
     <h1>seu diário ({{email}})</h1>
     <button class="to_scale" onclick="redirecionarParaDiario('{{ email }}')">adicionar nova entrada</button>
 

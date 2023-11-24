@@ -60,7 +60,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 600px;
   margin: 0 auto;
   align-items: center;
   align-content: center;
@@ -165,4 +165,23 @@ a {
 
 button:hover {
   background-color: #2b8960;
+}
+
+
+.navigation{
+  margin: 10px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: #c3e6d9;
+  padding: 0px 5px;
+  border-radius: 10px;
+}
+
+.nav-selected {
+  color: #3fbc9b;
+}
+
+.navigation:hover {
+  color: #3fbc9b;
 }
