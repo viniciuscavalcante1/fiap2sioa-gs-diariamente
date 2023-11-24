@@ -2,13 +2,11 @@ from fastapi import APIRouter, Request, status, Form, Query, Response, HTTPExcep
 from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
 
-
 router = APIRouter()
 templates = Jinja2Templates(directory='templates')
 
 
 @router.get("/")
-# TODO: adicionar entradas em json
 def index(request: Request,
           email=Query(...)):
     from server.routes.login import usuario_autenticado
@@ -29,3 +27,14 @@ def index(request: Request,
             url=f"/login",
             status_code=status.HTTP_302_FOUND)
         return response
+
+
+@router.post("/")
+def diario_post(request: Request,
+                titulo: str = Form(...),
+                humor: int = Form(...),
+                conteudo: str = Form(...),
+                momento_feliz: str = Form(...),
+                email=Query(...)):
+    print(f"titulo: {titulo}\nhumor: {humor}\nconteudo: {conteudo}\nmomento_feliz: {momento_feliz}")
+    return RedirectResponse(url=f"/diario?email={email}", status_code=303)
