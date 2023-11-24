@@ -7,3 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+    function copiar(titulo, humor, conteudo, momentoFeliz, timestamp) {
+        var copyText = `
+Título: ${titulo}
+Humor: ${humor}
+Conteúdo: ${conteudo}
+Momento Feliz: ${momentoFeliz}
+Timestamp: ${timestamp}`;
+
+        var textarea = document.createElement('textarea');
+        textarea.value = copyText;
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        var dados = document.getElementById('dadosCopiados');
+        dados.style.display = 'block';
+
+        setTimeout(function () {
+            dados.style.display = 'none';
+        }, 2000);
+    }
