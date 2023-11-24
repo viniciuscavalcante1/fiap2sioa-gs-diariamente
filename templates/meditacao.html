@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>respirar</title>
+    <link rel="stylesheet" href="../static/css/meditacao.css?v=1">
+    <script src="../static/js/meditacao.js?v=1"></script>
+
+</head>
+<body>
+<div class="container">
+    <img src="../static/img/logo.png?v=1" alt="Logo">
+    <h1>respire fundo e conecte-se consigo mesmo</h1>
+    <div class="meditacao-container">
+        <label for="duracao">por quanto tempo vamos meditar?</label>
+        <select id="duracao" name="duracao">
+            <option value="300">5 minutos</option>
+            <option value="600">10 minutos</option>
+            <option value="900">15 minutos</option>
+        </select>
+        <button id="iniciarMeditacao">iniciar</button>
+    </div>
+    <audio id="somChuva" src="../static/audio/chuva.mp3" loop></audio>
+    <div id="contador" class="respiracao"></div>
+
+</div>
+</body>
+</html>

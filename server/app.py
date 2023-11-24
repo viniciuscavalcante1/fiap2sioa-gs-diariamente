@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from server.routes.diario import router as diario_router
 from server.routes.login import router as login_router
 from server.routes.cadastro import router as cadastro_router
+from server.routes.meditacao import router as meditacao_router
 from pathlib import Path
 from fastapi.exceptions import RequestValidationError
 from fastapi import Request, status
@@ -15,7 +16,7 @@ app = FastAPI()
 app.include_router(login_router, tags=["login"], prefix="/login")
 app.include_router(cadastro_router, tags=["cadastro"], prefix="/cadastro")
 app.include_router(diario_router, tags=["diario"], prefix="/diario")
-
+app.include_router(meditacao_router, tags=["meditacao"], prefix="/meditacao")
 
 app.mount(
     "/static",
