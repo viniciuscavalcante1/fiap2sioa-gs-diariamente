@@ -31,7 +31,6 @@ def index(request: Request,
             context = {'request': request, 'email': email}
             return templates.TemplateResponse('diario.html', context, status_code=200)
         else:
-            # TODO: trocar esse HTTPException por uma página bonitinha de erro
             raise HTTPException(
                 status_code=403,
                 detail="Sem permissão",

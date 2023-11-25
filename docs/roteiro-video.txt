@@ -1,0 +1,31 @@
+Olá! 
+Eu sou o Vinícius e vou mostrar a minha solução para o Global Solution do segundo semestre de 2023, em parceria com a Hapvida Notredame Intermedica.
+O desafio proposto foi direcionado para a área da saúde, e eu escolhi ir em direção à saúde mental, por já ter enfrentado episódios de depressão.
+Minha solução se chama diariamente: uma junção das palavras diário e mente. 
+É um aplicativo web e vou abrí-lo agora. Opa! Aqui você já pode perceber um spoiler: gerei 3 cargas diferentes de testes, com mil, dez mil e cem mil usuários. E todos eles foram criados e inseridos na Árvore AVL de usuários em menos de um segundo! Além disso, também armazenamos esses usuários em um json para questões de persistência.
+Agora, vou mostrar a página inicial da minha aplicação. 
+O diariamente tem quatro páginas principais, além da inicial: uma página de diário, um timer de meditação, uma página de vídeos e uma página voltada para encontrar ajuda profissional. Vou passar por cada uma delas.
+Opa, mas pera lá!
+Primeiro, precisamos fazer login. Vou tentar entrar com o email arnaldo@gmail.com e a senha arnaldo. Não consegui.
+E aqui vemos o primeiro ponto: temos autenticação.
+Então, vou criar o usuário do Arnaldo, novamente com a senha arnaldo. Voltando pro json, podemos ver que a senha está diferente. Usei um algoritmo de hash para criptografar.
+Agora fazemos login e pronto! Estamos dentro. Na página de diário, especificamente. 
+Aqui, inserimos como estamos nos sentindo e chamamos isso de entrada. Vou preencher umas quatro aqui.
+Agora, ao clicar em ver outras entradas, é possível encontrar todas as entradas que preenchi, em ordem decrescente por horário. Implementei um algoritmo de quicksort para a ordenação.
+A próxima página é um timer de meditação, em que é possível selecionar um intervalo e iniciar um timer com sons de chuva. Perceba que a url está com a rota de meditação e que em todos os redirecionamentos estou mandando o email do usuário autenticado. O que será que acontece se eu tentar voltar para a tela de diários e tentar acessar o diário de outra pessoa? Vamos ver. BAN, sem permissão. Proteção contra acesso não autorizado.
+A página de vídeos relaxantes e divertidos oferece uma curadoria de vídeos divertidos de animais, meditações guiadas, motivacionais e até mesmo piano.
+Por fim, a página de ajuda profissional lista diversos profissionais da área da saúde mental selecionados para se conectar com nosso usuário. Podemos até mesmo enviar uma mensagem direto para o psicólogo.
+
+Bom, para este projeto, escolhi a linguagem Python junto com a bibilioteca FastAPI para criar as rotas e renderizar as páginas HTML por questões de performance e familiaridade. Nenhuma outra biblioteca externa, além das dependências do próprio FastAPI, foi utilizada. 
+O projeto está no Github, com este arquivo de README que explica detalhadamente como executar, a estrutura do projeto e pontos técnicos, como a escolha de inserir e buscar usuários em Árvores AVL e em json para persistência, quicksort para ordenação, a implementação de autenticação, criptografia e proteção de acesso, e performance com alto volume de usuários. 
+
+Como eu fiz a documentação de todas as classes, funções e métodos com docstrings, consegui gerar um arquivo html com o PyDoc e lá também é possível consultar todo o projeto. 
+
+Agora, vou mostrar um pouco do código.
+Esses são os arquivos json para salvar informações.
+Essa é a classe usuário, para representar as informações do nosso usuário.
+Aqui, criei um arquivo por rota. Como todos seguem um modelo parecido, vou mostrar a de cadastro. Tenho várias funções auxiliares para realizar a autenticação, criar árvores AVL e alimentá-las através do json, além da definição dos métodos HTTP get e post da rota. Na rota de cadastro que realizo também o hash da senha do usuário e a inserção na árvore.
+A rota de diario tem um código para impedir acesso não autorizado e autenticaod. 
+Na rota de Login, eu autentico o usuário e salvo o e-mail dele para utilizar nas demais rotas. 
+O arquivo app é para adicoinar todas essas rotas ao fast api e os demais arquivos são templates html e css das rotas.
+

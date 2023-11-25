@@ -138,5 +138,15 @@
       "momento_feliz": "c",
       "timestamp": "2023-11-24T10:42:53.400353"
     }
+  ],
+  "arnaldo@gmail.com": [
+    {
+      "email": "arnaldo@gmail.com",
+      "titulo": "ENTRADA LEGAL",
+      "humor": 4,
+      "conteudo": "aidjadijadjia",
+      "momento_feliz": "ADIAJDIAJID",
+      "timestamp": "2023-11-24T22:18:51.200341"
+    }
   ]
 }
